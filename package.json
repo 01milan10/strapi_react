@@ -6,7 +6,7 @@
   "author": "01milan10 <kmilan604@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint:client":"yarn run lint:js:fix --prefix clients"
+    "lint:client":"yarn start --prefix client"
   },
   "dependencies": {
     "eslint": "^7.15.0",

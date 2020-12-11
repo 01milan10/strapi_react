@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import Container from "react-bootstrap/Container";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Container from 'react-bootstrap/Container';
 import {
   Card,
   Form,
@@ -10,14 +10,14 @@ import {
   Collapse,
   InputGroup,
   FormGroup,
-} from "react-bootstrap";
-import { useFormik } from "formik";
-import * as yup from "yup";
-import { useParams, useHistory } from "react-router-dom";
+} from 'react-bootstrap';
+import { useFormik } from 'formik';
+import * as yup from 'yup';
+import { useParams, useHistory } from 'react-router-dom';
 
 export default function TodoForm() {
   const [todoForm, setTodoForm] = useState(true);
-  const [todo, setTodo] = useState({ title: "", description: "" });
+  const [todo, setTodo] = useState({ title: '', description: '' });
   const { id } = useParams();
   const history = useHistory();
 
@@ -27,7 +27,7 @@ export default function TodoForm() {
 
   const getTodo = async (id) => {
     const response = await axios.get(`/todos/${id}`);
-    let fetchedTodo = response.data;
+    const fetchedTodo = response.data;
     setTodo({
       ...todo,
       title: fetchedTodo.title,
@@ -35,9 +35,9 @@ export default function TodoForm() {
     });
   };
 
-  let todoSchema = yup.object().shape({
-    title: yup.string().min(2, "Too Short").max(70, "Too Long").required(),
-    description: yup.string().min(2, "Too Short").required(),
+  const todoSchema = yup.object().shape({
+    title: yup.string().min(2, 'Too Short').max(70, 'Too Long').required(),
+    description: yup.string().min(2, 'Too Short').required(),
   });
 
   const formik = useFormik({
@@ -51,7 +51,7 @@ export default function TodoForm() {
       const valid = await todoSchema.isValid(values);
       if (valid) {
         await axios.put(`/todos/${id}`, values);
-        history.push("/");
+        history.push('/');
       }
     },
   });
@@ -65,7 +65,10 @@ export default function TodoForm() {
         <Card.Header>
           <Row>
             <Col sm="10">
-              <h5>Edit {todo.title}</h5>
+              <h5>
+                Edit
+                {todo.title}
+              </h5>
             </Col>
             <Col sm="2" className="d-flex justify-content-end">
               {!todoForm && (
@@ -116,7 +119,7 @@ export default function TodoForm() {
                 fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
                 onClick={() => {
-                  history.push("/");
+                  history.push('/');
                 }}
               >
                 <path
@@ -181,7 +184,7 @@ export default function TodoForm() {
                       size="sm"
                       className="shadow"
                       onClick={() => {
-                        history.push("/");
+                        history.push('/');
                       }}
                     >
                       Cancel

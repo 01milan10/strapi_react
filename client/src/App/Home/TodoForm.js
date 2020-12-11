@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState } from 'react';
+import axios from 'axios';
 import {
   Card,
   Form,
@@ -10,32 +10,32 @@ import {
   InputGroup,
   FormGroup,
   Container,
-} from "react-bootstrap";
-import { useFormik } from "formik";
-import * as yup from "yup";
-import { useHistory } from "react-router-dom";
+} from 'react-bootstrap';
+import { useFormik } from 'formik';
+import * as yup from 'yup';
+import { useHistory } from 'react-router-dom';
 
 export default function TodoForm() {
   const [todoForm, setTodoForm] = useState(true);
   const history = useHistory();
 
-  let todoSchema = yup.object().shape({
-    title: yup.string().min(2, "Too Short").max(70, "Too Long").required(),
-    description: yup.string().min(2, "Too Short").required(),
+  const todoSchema = yup.object().shape({
+    title: yup.string().min(2, 'Too Short').max(70, 'Too Long').required(),
+    description: yup.string().min(2, 'Too Short').required(),
   });
 
   const formik = useFormik({
     initialValues: {
-      title: "",
-      description: "",
+      title: '',
+      description: '',
     },
     validationSchema: todoSchema,
     onSubmit: async (values) => {
       const valid = await todoSchema.isValid(values);
       if (valid) {
-        await axios.post("/todos", values);
-        values.title = "";
-        values.description = "";
+        await axios.post('/todos', values);
+        values.title = '';
+        values.description = '';
       }
     },
   });
