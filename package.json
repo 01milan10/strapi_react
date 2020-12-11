@@ -1,0 +1,23 @@
+{
+  "name": "react_strapi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/01milan10/react_strapi.git",
+  "author": "01milan10 <kmilan604@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^7.15.0",
+    "husky": "^4.3.5",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1"
+  },
+  "husky":{
+    "hooks":{
+      "pre-commit":"lint-staged"
+    }
+  },
+  "lint-staged":{
+    "*.js":"eslint --fix",
+    "*.{js,jsx,ts,tsx,md,html,css}":"prettier --write"
+  }
+}
