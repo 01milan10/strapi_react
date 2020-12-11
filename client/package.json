@@ -38,8 +38,5 @@
       "last 1 safari version"
     ]
   },
-  "lint-staged":{
-    "*.{js,jsx}":"eslint --fix"
-  },
   "proxy": "http://localhost:1337/"
 }
