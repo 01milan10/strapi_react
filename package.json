@@ -5,6 +5,9 @@
   "repository": "https://github.com/01milan10/react_strapi.git",
   "author": "01milan10 <kmilan604@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "lint:client":"yarn run lint:js:fix --prefix clients"
+  },
   "dependencies": {
     "eslint": "^7.15.0",
     "husky": "^4.3.5",
@@ -18,8 +21,7 @@
   },
   "lint-staged": {
     "{clients/**/*}.{js,jsx}": [
-      "eslint --fix"
-    ],
-    "{clients/**/*}.{js,jsx,ts,tsx,md,html,css}": "prettier --write"
+      "yarn run lint:client"
+    ]
   }
 }
