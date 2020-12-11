@@ -17,9 +17,9 @@
     }
   },
   "lint-staged": {
-    "*.js": [
+    "{clients/**/*}.{js,jsx}": [
       "eslint --fix"
     ],
-    "*.{js,jsx,ts,tsx,md,html,css}": "prettier --write"
+    "{clients/**/*}.{js,jsx,ts,tsx,md,html,css}": "prettier --write"
   }
 }
