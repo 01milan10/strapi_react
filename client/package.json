@@ -8,7 +8,6 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
-    "eslint": "^7.15.0",
     "formik": "^2.2.5",
     "lint-staged": "^10.5.3",
     "lodash": "^4.17.20",
@@ -38,5 +37,9 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:1337/"
+  "proxy": "http://localhost:1337/",
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-plugin-react": "^7.21.5"
+  }
 }
