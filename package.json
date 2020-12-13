@@ -5,9 +5,6 @@
   "repository": "https://github.com/01milan10/react_strapi.git",
   "author": "01milan10 <kmilan604@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "lint:client":"cd client && yarn lint-staged"
-  },
   "dependencies": {
     "eslint": "^7.15.0",
     "husky": "^4.3.5",
@@ -16,7 +13,9 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint:client"
+      "pre-commit": "lint-staged"
     }
-  }
+  },
+  "lint-staged":"cd client && yarn lint-staged"
+
 }
