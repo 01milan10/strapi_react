@@ -6,7 +6,7 @@
   "author": "01milan10 <kmilan604@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "pre-commit":"cd client && lint-staged"
+    "pre-commit": "cd client && lint-staged"
   },
   "dependencies": {
     "eslint": "^7.15.0",
@@ -16,8 +16,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn pre-commit"
+      "pre-commit": "pre-commit"
     }
   }
-
 }
