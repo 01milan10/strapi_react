@@ -13,9 +13,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "cd client && lint-staged"
     }
-  },
-  "lint-staged":"cd client && yarn lint-staged"
+  }
 
 }
